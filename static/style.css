@@ -1,0 +1,42 @@
+h2 {
+    color: white;
+    font-size: 42px;
+    background-color: purple;
+    text-align: center;
+    font-family: Arial
+
+}
+
+body{
+    font-family: Arial;
+    font-weight: bold;
+    margin:10 auto;
+    display: block;
+    text-align: center;
+}
+
+input{
+    background-color: yellow;
+    font-size: 14px;
+
+}
+
+div{
+  margin-bottom: 10px  
+
+}
+
+p{
+    border-width: 10px;
+    border-style: groove; 
+    border-color: purple;
+}
+
+select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+option{
+    background-color: yellow;
+}
