@@ -412,7 +412,32 @@
 </fieldset>
 
 <script>
-  // put your code here
+
+
+
+function play(evt){
+  var randomnumber=Math.floor(Math.random()*101);
+  
+
+  while (Number(guess) !== randomnumber) {
+    var guess = prompt("Guess my number: ");
+   
+    if (Number(guess) > randomnumber){
+      alert("Your number is too high.");
+      
+    } 
+    else if (Number(guess) < randomnumber){
+      alert("Your number is too low");
+      
+    }
+  }
+  alert("You guessed my number");
+  
+  
+}
+
+$("#play-guessing-game").on("click", play);
+
 </script>
 
 <div class="hint">
@@ -452,7 +477,44 @@
 </fieldset>
 
 <script>
-  // put your code here
+ var randomnumber = -1 // put your code here
+
+function startGame(evt){
+  
+  $('#try-this-number').prop('disabled', false);
+  $('#number-guessed').prop('disabled', false);
+  $('#play-guessing-game-2').prop('disabled', true);
+  $("#number-guessing-msg").html("");
+  randomnumber=Math.floor(Math.random()*101);
+  
+}
+
+function playGame(evt){
+  evt.preventDefault();
+  console.log(randomnumber);
+  var guess = $("#number-guessed").val();
+
+     
+  if (Number(guess) > randomnumber){
+    $("#number-guessing-msg").html("Your number is too high. Guess Again");
+      
+  } 
+  
+  else if (Number(guess) < randomnumber){
+      $("#number-guessing-msg").html("Your number is too low.  Guess Again.");
+      
+  }
+  
+  else if (Number(guess) === randomnumber){
+    $("#number-guessing-msg").html("You guessed my number!  Press Play if you want to play again");
+    $('#try-this-number').prop('disabled', true);
+    $('#number-guessed').prop('disabled', true);
+    $('#play-guessing-game-2').prop('disabled', false);
+  }
+}
+
+$("#guessing-game-2-form").submit(playGame)
+$("#play-guessing-game-2").on("click", startGame)
 </script>
 
 
